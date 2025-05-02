@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemixMS - MapleStory v83 Private Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/maplestory-logo.png" alt="RemixMS Logo">
+            </div>
+            <div class="nav-buttons">
+                <a href="#home" class="nav-button">Home</a>
+                <a href="#" class="nav-button" id="downloadBtn">Download</a>
+                <a href="#" class="nav-button register" id="registerBtn">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Choose Your Download</h2>
+            <div class="download-options">
+                <a href="https://drive.usercontent.google.com/download?id=1Rasn_fmtbXfvbOfDqIC2BXb-KMlGLkxD&authuser=0" class="download-option" target="_blank">
+                    <i class="fas fa-download"></i>
+                    <span>V83MSSETUP</span>
+                </a>
+                <a href="https://mega.nz/file/aM00UawK#HsMwrN-1d_faOPwJCwpOFjk8k3f19anKZu0cU_12EOc" class="download-option" target="_blank">
+                    <i class="fas fa-download"></i>
+                    <span>RemixMS Client</span>
+                </a>
+                <a href="https://mega.nz/file/qM0znS5C#dLgDrIU8QD5QPawv28bXwqZMoXVcFRFrK493cEYr0X8" class="download-option" target="_blank">
+                    <i class="fas fa-download"></i>
+                    <span>WZ Files</span>
+                </a>
+            </div>
+            <div class="installation-steps">
+                <h3>Installation Guide:</h3>
+                <ol>
+                    <li>Download all three files: V83MSSETUP, RemixMS Client, and WZ Files</li>
+                    <li>Run and install the V83MSSETUP</li>
+                    <li>Navigate to C:\Nexon\MapleStory and delete:
+                        <ul>
+                            <li>HShield folder</li>
+                            <li>Patcher.exe</li>
+                            <li>MapleStory.exe</li>
+                        </ul>
+                    </li>
+                    <li>Extract the WZ Files and copy them into the MapleStory folder</li>
+                    <li>Copy the RemixMS Client into the MapleStory folder</li>
+                </ol>
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Important:</strong> You must disable your firewall, antivirus, and real-time protection before playing. This is a common requirement for all MapleStory private servers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Auto Registration</h2>
+            <p>Registering is not needed as we have auto register enabled in the login page of the game. Just key in the ID and password you prefer in the login page and it will automatically register your account!</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to RemixMS</h1>
+                <p>Experience the classic MapleStory v83 with exciting new features!</p>
+                <div class="rates-container">
+                    <div class="rate-box">
+                        <i class="fas fa-star"></i>
+                        <span class="rate-value">5x</span>
+                        <span class="rate-label">EXP Rate</span>
+                    </div>
+                    <div class="rate-box">
+                        <i class="fas fa-coins"></i>
+                        <span class="rate-value">4x</span>
+                        <span class="rate-label">Meso Rate</span>
+                    </div>
+                    <div class="rate-box">
+                        <i class="fas fa-gift"></i>
+                        <span class="rate-value">2x</span>
+                        <span class="rate-label">Drop Rate</span>
+                    </div>
+                </div>
+                <a href="#download" class="cta-button">Play Now</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

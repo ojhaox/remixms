@@ -1,24 +1,39 @@
-// Modal functionality
+// Get the modal elements
+const registerModal = document.getElementById('registerModal');
 const downloadModal = document.getElementById('downloadModal');
+const registerBtn = document.getElementById('registerBtn');
 const downloadBtn = document.getElementById('downloadBtn');
-const closeModal = document.getElementsByClassName('close-modal')[0];
+const closeBtns = document.querySelectorAll('.close-modal');
 
-// Open download modal
-downloadBtn.onclick = function() {
-    downloadModal.style.display = "block";
-}
+// When the user clicks the register button, open the modal
+registerBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    registerModal.style.display = 'block';
+});
 
-// Close modal when clicking the X
-closeModal.onclick = function() {
-    downloadModal.style.display = "none";
-}
+// When the user clicks the download button, open the modal
+downloadBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    downloadModal.style.display = 'block';
+});
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target == downloadModal) {
-        downloadModal.style.display = "none";
+// When the user clicks on any close button, close the modal
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        registerModal.style.display = 'none';
+        downloadModal.style.display = 'none';
+    });
+});
+
+// When the user clicks anywhere outside the modal, close it
+window.addEventListener('click', function(event) {
+    if (event.target == registerModal) {
+        registerModal.style.display = 'none';
     }
-}
+    if (event.target == downloadModal) {
+        downloadModal.style.display = 'none';
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,11 +1,11 @@
-const express = require('express');
 const pool = require('../config/database');
 const bcrypt = require('bcrypt');
 
-const app = express();
-app.use(express.json());
+module.exports = async (req, res) => {
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
 
-app.post('/api/register', async (req, res) => {
     const { username, password, email } = req.body;
 
     try {
@@ -72,6 +72,4 @@ app.post('/api/register', async (req, res) => {
         console.error('Registration error:', error);
         res.status(500).json({ error: 'Registration failed' });
     }
-});
-
-module.exports = app; 
+}; 

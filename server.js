@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '.')));
 
+// Serve index.html for the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
     const { username, password, email } = req.body;
@@ -89,6 +94,11 @@ app.get('/api/test', async (req, res) => {
         console.error('Database error:', error);
         res.status(500).json({ success: false, error: 'Database error' });
     }
+});
+
+// Handle 404 errors
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {

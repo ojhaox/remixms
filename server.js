@@ -98,6 +98,9 @@ app.get('/api/test', async (req, res) => {
     }
 });
 
+// Export the Express API
+module.exports = app;
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 }); 

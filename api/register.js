@@ -23,6 +23,10 @@ module.exports = async (req, res) => {
     const { username, password, email } = req.body;
 
     try {
+        // Test database connection first
+        const connection = await pool.getConnection();
+        connection.release();
+
         // Check if username already exists
         const [existingUsers] = await pool.query(
             'SELECT * FROM accounts WHERE name = ?',
@@ -84,6 +88,11 @@ module.exports = async (req, res) => {
         res.status(201).json({ message: 'Registration successful' });
     } catch (error) {
         console.error('Registration error:', error);
-        res.status(500).json({ error: 'Registration failed' });
+        // Send more detailed error information
+        res.status(500).json({ 
+            error: 'Registration failed',
+            details: error.message,
+            code: error.code
+        });
     }
 }; 

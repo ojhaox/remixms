@@ -1,0 +1,21 @@
+{
+  "name": "remixms-website",
+  "version": "1.0.0",
+  "description": "RemixMS v83 Private Server Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "vercel-build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.x"
+  }
+}
